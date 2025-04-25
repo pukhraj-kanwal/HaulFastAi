@@ -2,6 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { initializeDataSource } from './data-source';
 import driverRoutes from './controllers/driver.controller'; // Import driver routes
+import truckRoutes from './controllers/truck.controller'; // Import truck routes
+import trailerRoutes from './controllers/trailer.controller'; // Import trailer routes
 
 // Load environment variables from .env file
 dotenv.config();
@@ -18,8 +20,10 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Asset Service is running!');
 });
 
-// Use driver routes
+// Use asset routes
 app.use('/drivers', driverRoutes);
+app.use('/trucks', truckRoutes);
+app.use('/trailers', trailerRoutes);
 
 // Initialize database and start the server
 initializeDataSource()
