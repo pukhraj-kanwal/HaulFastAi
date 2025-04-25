@@ -1,5 +1,6 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import { initializeDataSource } from './data-source';
 
 // Load environment variables from .env file
 dotenv.config();
@@ -16,10 +17,18 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Asset Service is running!');
 });
 
-// Start the server
-app.listen(port, () => {
-  console.log(`[server]: Asset Service is running at http://localhost:${port}`);
-});
+// Initialize database and start the server
+initializeDataSource()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`[server]: Asset Service is running at http://localhost:${port}`);
+    });
+  })
+  .catch((err) => {
+    console.error('Failed to initialize data source:', err);
+    process.exit(1); // Exit the process if database connection fails
+  });
+
 
 // Basic error handling (can be expanded)
 app.use((err: Error, req: Request, res: Response, next: Function) => {
