@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true, // Enables compatibility with CommonJS modules
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "target": "ES2022", // Target latest ECMAScript features supported by Node.js LTS
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "resolveJsonModule": true, // Include modules imported with .json extension
+    "moduleDetection": "force", // Treat files as modules
+    "isolatedModules": true, // Ensure modules can be transpiled independently
+
+    /* Strictness */
+    "strict": true, // Enable all strict type-checking options
+    "noUncheckedIndexedAccess": true, // Prevent unsafe indexing into objects
+    "checkJs": true, // Report errors in .js files
+
+    /* If NOT transpiling with TypeScript: */
+    "module": "NodeNext", // Specify module code generation for Node.js
+    "outDir": "./dist", // Redirect output structure to the directory
+    "sourceMap": true, // Generate corresponding '.map' file
+
+    /* If your code runs in the DOM: */
+    // "lib": ["es2022", "dom", "dom.iterable"],
+
+    /* If you're building for a library: */
+    // "declaration": true,
+
+    /* If you're building for a library in a monorepo: */
+    // "composite": true,
+    // "declarationMap": true,
+
+    /* Module Resolution Options: */
+    "moduleResolution": "NodeNext", // Use Node.js module resolution strategy
+    "baseUrl": ".", // Base directory to resolve non-absolute module names
+    "paths": { // Module path aliases
+      "@/*": ["./src/*"]
+    },
+
+    /* Experimental Options: */
+    // "experimentalDecorators": true,
+    // "emitDecoratorMetadata": true,
+
+    /* Advanced Options: */
+    "forceConsistentCasingInFileNames": true // Disallow inconsistently-cased references to the same file.
+  },
+  "include": ["src/**/*.ts"], // Files to include in compilation
+  "exclude": ["node_modules", "dist"] // Files/directories to exclude
+}

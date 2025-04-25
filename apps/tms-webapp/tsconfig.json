@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ESNext", // Target modern ECMAScript features for browsers
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+
+    /* React/DOM Specific */
+    "jsx": "react-jsx", // Use new JSX transform
+    "lib": ["dom", "dom.iterable", "esnext"], // Include DOM and modern ES libraries
+    "noEmit": true, // Let the bundler (like Vite or Webpack) handle emission
+
+    /* Module Resolution Options: */
+    "module": "ESNext", // Use modern ES module system
+    "moduleResolution": "bundler", // Align with modern bundler resolution
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
+    /* Advanced Options: */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"], // Include TS and TSX files
+  "exclude": ["node_modules"]
+}

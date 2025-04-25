@@ -1,0 +1,19 @@
+{
+  "name": "tms-mobileapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/react": "^19.1.2",
+    "@types/react-native": "^0.72.8",
+    "react": "^19.1.0",
+    "react-native": "^0.79.1",
+    "typescript": "^5.8.3"
+  }
+}
