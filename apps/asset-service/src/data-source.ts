@@ -13,7 +13,11 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_DATABASE,
     synchronize: true, // WARNING: synchronize: true is for development only - do not use in production
     logging: false, // Set to true to see SQL logs
-    entities: [], // Array of entity classes - will be added later
+    entities: [
+        DriverEntity,
+        TruckEntity,
+        TrailerEntity
+    ], // Array of entity classes
     migrations: [], // Array of migration classes - will be added later
     subscribers: [], // Array of subscriber classes - will be added later
 });

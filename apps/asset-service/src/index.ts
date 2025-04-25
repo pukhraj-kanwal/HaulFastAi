@@ -1,6 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { initializeDataSource } from './data-source';
+import driverRoutes from './controllers/driver.controller'; // Import driver routes
 
 // Load environment variables from .env file
 dotenv.config();
@@ -16,6 +17,9 @@ app.use(express.json());
 app.get('/', (req: Request, res: Response) => {
   res.send('Asset Service is running!');
 });
+
+// Use driver routes
+app.use('/drivers', driverRoutes);
 
 // Initialize database and start the server
 initializeDataSource()
